@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.blog.model.Admin">
+    <id column="am_id" jdbcType="INTEGER" property="amId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="adress" jdbcType="VARCHAR" property="adress" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="pass" jdbcType="VARCHAR" property="pass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    am_id, name, tag, img, adress, phone, email, pass
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where am_id = #{amId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from admin
+    where am_id = #{amId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.blog.model.Admin">
+    insert into admin (am_id, name, tag, 
+      img, adress, phone, 
+      email, pass)
+    values (#{amId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, 
+      #{img,jdbcType=VARCHAR}, #{adress,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{pass,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.model.Admin">
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="amId != null">
+        am_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="adress != null">
+        adress,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="pass != null">
+        pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="amId != null">
+        #{amId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="adress != null">
+        #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null">
+        #{pass,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.model.Admin">
+    update admin
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="adress != null">
+        adress = #{adress,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null">
+        pass = #{pass,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where am_id = #{amId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.model.Admin">
+    update admin
+    set name = #{name,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR},
+      adress = #{adress,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      pass = #{pass,jdbcType=VARCHAR}
+    where am_id = #{amId,jdbcType=INTEGER}
+  </update>
+
+  <select id="login" parameterType="com.blog.model.Admin" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+    where email=#{email}
+    and
+    pass=#{pass}
+  </select>
+</mapper>
