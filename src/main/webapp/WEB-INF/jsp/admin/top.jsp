@@ -30,10 +30,10 @@
 					<a class="navbar-brand" href="#"><span>Blog</span>&nbsp;Admin</a>
 					<ul class="user-menu">
 						<li class="dropdown pull-right">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> ADMIN <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> ${sessionScope.admin.name} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
-									<a href="#"><span class="glyphicon glyphicon-log-out"></span>退出系统</a>
+									<a href="<%=path%>/admin/logout"><span class="glyphicon glyphicon-log-out"></span>退出系统</a>
 								</li>
 							</ul>
 						</li>

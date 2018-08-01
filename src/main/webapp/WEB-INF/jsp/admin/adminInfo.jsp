@@ -45,15 +45,15 @@
 						<form action="#" role="form" method="post">
 								<div class="form-group">
 									<label>ID</label>
-									<input class="form-control" placeholder="ID"  type="text" readonly="readonly">
+									<input class="form-control" placeholder="ID"  value="${sessionScope.admin.amId}"  type="text" readonly="readonly">
 								</div>
 								<div class="form-group">
 									<label>名称</label>
-									<input type="text" class="form-control">
+									<input type="text" value="${sessionScope.admin.name}" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>标签</label>
-									<input type="text" class="form-control">
+									<input type="text" value="${sessionScope.admin.tag}" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>头像</label>
@@ -61,11 +61,11 @@
 								</div>
 								<div class="form-group">
 									<label>地址</label>
-									<input type="text" class="form-control">
+									<input type="text" value="${sessionScope.admin.adress}" class="form-control">
 								</div>
 								<div class="form-group">
 									<label>联系方式</label>
-									<input type="text" class="form-control">
+									<input type="text" value="${sessionScope.admin.phone}" class="form-control">
 								</div>
 								<button type="submit" class="btn btn-primary">修改信息</button>
 								</form>

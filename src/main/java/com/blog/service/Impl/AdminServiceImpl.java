@@ -18,4 +18,12 @@ public class AdminServiceImpl implements IAdminService{
 		return dao.login(admin);
 	}
 
+	@Override
+	public Admin login(String email, String pass) {
+		Admin admin=new Admin();
+		admin.setEmail(email);
+		admin.setPass(pass);
+		return this.login(admin);
+	}
+
 }
