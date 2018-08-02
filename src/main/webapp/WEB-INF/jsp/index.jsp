@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%
-String path=request.getContextPath();
-    String staticpath=path+"/static";
+<%
+	String path = request.getContextPath();
+	String staticPath = path + "/static";
 %>
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,8 @@ String path=request.getContextPath();
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="<%=staticpath%>/css/bootstrap/bootstrap.min.css" />
-		<link rel="stylesheet" href="<%=staticpath%>/css/bootstrap/mystyle.css" />
+		<link rel="stylesheet" href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="<%=staticPath%>/css/bootstrap/mystyle.css" />
 		<title>Hello World</title>
 	</head>
 
@@ -80,7 +80,7 @@ String path=request.getContextPath();
 							<div class="panel-body">
 								<div class="content col-lg-10 col-lg-offset-1">
 									<div class="row">
-									<img src="<%=staticpath%>/img/pier-407252_1920.jpg" class="img-responsive center-block img-thumbnail" />
+									<img src="<%=staticPath%>/img/pier-407252_1920.jpg" class="img-responsive center-block img-thumbnail" />
 									</div>
 									<div class="content-text row">
 									<p>${blog.content}</p>
@@ -132,10 +132,10 @@ String path=request.getContextPath();
 										<h4></h4>
 									</div>
 									<div class="row">
-								<img src="<%=staticpath%>/img/man.jpg" class="img-circle col-lg-5 col-lg-offset-3"/>
+								<img src="<%=staticPath%>/img/man.jpg" class="img-circle col-lg-5 col-lg-offset-3"/>
 								</div>
 								<div class="row text-center">
-								<b>王大可</b><br />
+								<b>${sessionScope.admin.name}</b><br />
 								<span class="label label-primary">Java</span>
 								<span class="label label-success">Python</span>
 								<span class="label label-info">大数据</span>
@@ -207,8 +207,8 @@ String path=request.getContextPath();
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="js/jquery/jquery-3.3.1.min.js" ></script>
-	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<%=staticPath%>js/jquery/jquery-3.3.1.min.js" ></script>
+	<script type="text/javascript" src="<%=staticPath%>js/bootstrap/bootstrap.min.js" ></script>
 	<script>
 		$(function(){
 			$(".love").click(function(){

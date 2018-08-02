@@ -1,7 +1,11 @@
 package com.blog.service.Impl;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.blog.dao.AdminMapper;
 import com.blog.model.Admin;
@@ -24,6 +28,41 @@ public class AdminServiceImpl implements IAdminService{
 		admin.setEmail(email);
 		admin.setPass(pass);
 		return this.login(admin);
+	}
+
+	
+	
+
+	@Override
+	public void updateAdmin(Admin admin) {
+		dao.updateByPrimaryKey(admin);
+		
+	}
+
+	
+	/**
+	 * 上传单个文件
+	 */
+	@Override
+	public void uploadImg(String savePath, MultipartFile file) {
+		//savePath :是文件存储路径  /upload
+				//filePath :是文件路径         /upload/+文件名
+				String filePath=savePath+File.separator+file.getOriginalFilename();
+				
+				File saveFile=new File(filePath);
+				//判断文件的父级路径是否存在，若不存在就创建
+				if(!saveFile.getParentFile().exists()){
+					saveFile.getParentFile().mkdirs();
+				}
+				
+				//写入文件，相当于输出了的write方法
+				try {
+					file.transferTo(saveFile);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+				
+		
 	}
 
 }

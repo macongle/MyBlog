@@ -80,4 +80,13 @@ public class Admin {
     public void setPass(String pass) {
         this.pass = pass == null ? null : pass.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Admin [amId=" + amId + ", name=" + name + ", tag=" + tag
+				+ ", img=" + img + ", adress=" + adress + ", phone=" + phone
+				+ ", email=" + email + ", pass=" + pass + "]";
+	}
+    
+    
 }

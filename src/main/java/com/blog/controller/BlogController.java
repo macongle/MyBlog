@@ -17,7 +17,7 @@ public class BlogController {
 	@Autowired
 	private IBlogService service;
 	
-	@RequestMapping("/list")
+	@RequestMapping()
 	public String selectAll(ModelMap map){
 		List<Blog> blogs = service.selectAll(); 
 		map.addAttribute("blogs", blogs);
