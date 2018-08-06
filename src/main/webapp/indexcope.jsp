@@ -82,7 +82,7 @@
 									</div>
 								</div>
 								<div>
-									<button class="btn btn-default pull-right love"><span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</a>
+									<button class="btn btn-default pull-right love"><span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</button>
 								</div>
 							</div>
 						</div>
@@ -111,7 +111,7 @@
 									</div>
 								</div>
 								<div>
-									<button class="btn btn-default pull-right love"><span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</a>
+									<button class="btn btn-default pull-right love"><span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</button>
 								</div>
 							</div>
 						</div>

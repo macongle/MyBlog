@@ -45,7 +45,7 @@
 	
 		
 		
-	</div><!--/.main-->
+	<!--/.main-->
     <script src="<%=staticPath%>/js/jquery/jquery-3.3.1.min.js" ></script>
     <script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js" ></script>
 	<script src="<%=staticPath%>/js/bootstrap/bootstrap-table.js"></script>
@@ -57,11 +57,11 @@
 			$(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
 		}(window.jQuery);
 		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-		})
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
+		});
 		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-		})
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
+		});
 	</script>	
 </body>
 

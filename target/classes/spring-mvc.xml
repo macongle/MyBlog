@@ -6,10 +6,15 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<!-- 1.开启SpringMVC的注解 -->
-	<mvc:annotation-driven/>
+	<!-- 1.开启SpringMVC的注解  如果报错 xsd文件改成4.0-->
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+    	</mvc:message-converters>
+	</mvc:annotation-driven>
 	
 	<!-- 2.配置视图解析器，添加前缀后缀 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -19,10 +24,11 @@
 	</bean>
 	
 	<!-- 3.处理静态文件 -->
+	<!-- 3.1.1 文件直接放在WebContent目录下 -->
 
 	<!-- 3.2 使用默认的Servlet去处理静态文件 -->
 	<mvc:default-servlet-handler/>
-	<mvc:annotation-driven/>
+	
 	<!-- 4.扫描所有Controller类 -->
 	<context:component-scan base-package="com.blog.controller"/>
 	

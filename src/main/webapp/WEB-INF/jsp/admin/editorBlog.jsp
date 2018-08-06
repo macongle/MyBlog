@@ -31,35 +31,37 @@
 					<li>
 						<a href="#"><span class="glyphicon glyphicon-home"></span></a>
 					</li>
-					<li class="active">添加博文</li>
+					<li class="active">编辑博文</li>
 				</ol>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">添加博文</h1>
+					<h1 class="page-header">编辑博文</h1>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">博文信息</div>
+						<div class="panel-heading">编辑博文</div>
 						<div class="panel-body">
-						<form action="<%=path%>/blog" method="post" role="form">
+						<form action="<%=path%>/blog/editBlog" method="post" role="form">
+						<input type="hidden" class="form-control"
+										name="bId" value="${requestScope.blog.bId}">
 							<div class="form-group">
 									<label>标题</label> <input type="text" class="form-control"
-										name="title">
+										name="title" value="${requestScope.blog.title}">
 							</div>
 							<div class="form-group">
 									<label>作者</label> <input type="text" class="form-control"
-										name="author">
+										name="author" value="${requestScope.blog.author}">
 							</div>
 							<div id="editor"></div>
 							<div class="form-group">
 									<textarea id="text1" class="form-control" name="content" style="display: none"></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">添加博文</button>
+							<button type="submit" class="btn btn-primary">提交修改</button>
 						</form>
 						</div>
 						
@@ -83,7 +85,12 @@
             $text1.val(html);
         };
 		editor.create();
-		$text1.val(editor.txt.html());			
+		$text1.val(editor.txt.html());
+		
+		window.onload = function(){
+			var str = '${requestScope.blog.content}';
+			editor.txt.html(str);
+		}
 		</script>
 	</body>
 

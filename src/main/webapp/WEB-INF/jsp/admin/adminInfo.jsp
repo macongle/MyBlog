@@ -34,11 +34,7 @@
 				<h1 class="page-header">个人信息</h1>
 			</div>
 		</div>
-
-
 		<div class="row">
-
-
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">修改信息</div>

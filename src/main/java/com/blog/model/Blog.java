@@ -1,10 +1,16 @@
 package com.blog.model;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Date;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Blog {
+public class Blog implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Integer bId;
 
     private String title;

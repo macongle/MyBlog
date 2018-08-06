@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%
 	String path = request.getContextPath();
 	String staticPath = path + "/static";
@@ -22,8 +23,11 @@
 		</style>
 
 	</head>
-
+ 
 	<body>
+	<!-- 一添加top.jsp就会出现两个搜素框 -->
+	<jsp:include page="top.jsp"/>
+	  <jsp:include page="menuLeft.jsp"/>
 		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 			<div class="row">
 				<ol class="breadcrumb">
@@ -57,14 +61,16 @@
 						    </tr>
 						    </thead>
 						    <tbody>
+						        <c:forEach items="${requestScope.blogList}" var="blog">
 						    	<tr>
-						    	<td>1</td>
-						    	<td>2</td>
-						    	<td>3</td>
-						    	<td>4</td>
-						    	<td>5</td>
-						    	<td><a class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span>&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger btn-sm" ><span class="glyphicon glyphicon-remove"></span>&nbsp;删除</a></td>
+						    	<td>${blog.bId}</td>
+						    	<td>${blog.title}</td>
+						    	<td>${blog.author}</td>
+						    	<td>${blog.createtime}</td>
+						    	<td>${blog.readcount}</td>
+						    	<td><a class="btn btn-warning btn-sm" href="<%=path%>/blog/updateBlog/${blog.bId}"><span class="glyphicon glyphicon-pencil"></span>&nbsp;编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-danger btn-sm" href="<%=path%>/blog/deleteBlog/${blog.bId}"><span class="glyphicon glyphicon-remove"></span>&nbsp;删除</a></td>
 						    	</tr>
+						    	</c:forEach>
 						    </tbody>
 						</table>
 						</div>
@@ -73,11 +79,18 @@
 			</div>
 		</div>
 
-		</div>
 		<!--/.main-->
 		<script src="<%=staticPath%>/js/jquery/jquery-3.3.1.min.js"></script>
 		<script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<%=staticPath%>/js/bootstrap/bootstrap-table.js" ></script>
+		<script type="text/javascript">
+		window.onload = function() {
+			var msg = '${msg}';
+			if (msg != null && msg != "" && msg != undefined) {
+				alert(msg);
+			}
+		}
+		</script>
 	</body>
 
 </html>

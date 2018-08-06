@@ -32,12 +32,12 @@
 					</a>
 					<ul class="children collapse" id="sub-item-1">
 						<li>
-							<a class="" href="#">
+							<a class="" href="<%=path%>/blog">
 								<span class="glyphicon glyphicon-share-alt"></span> 博客管理
 							</a>
 						</li>
 						<li>
-							<a class="" href="#">
+							<a class="" href="<%=path%>/blog/addBlog">
 								<span class="glyphicon glyphicon-share-alt"></span> 添加博客
 							</a>
 						</li>
@@ -53,7 +53,7 @@
 					<a href="#"><span class="glyphicon glyphicon-list-alt"></span>访问统计</a>
 				</li>
 			</ul>
-		</div><!--/.sidebar-->
+		</div>
     <script src="<%=staticPath%>/js/jquery/jquery-3.3.1.min.js" ></script>
     <script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js" ></script>
     <script>

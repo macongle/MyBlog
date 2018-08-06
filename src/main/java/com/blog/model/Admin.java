@@ -1,7 +1,14 @@
 package com.blog.model;
 
-public class Admin {
-    private Integer amId;
+import java.io.Serializable;
+
+public class Admin implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer amId;
 
     private String name;
 

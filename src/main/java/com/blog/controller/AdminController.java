@@ -10,9 +10,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.blog.model.Admin;
+import com.blog.model.ImgResult;
 import com.blog.service.IAdminService;
 
 @Controller
@@ -163,6 +165,7 @@ public class AdminController {
 		
 		if(!file.isEmpty()){
 			String savePath=req.getServletContext().getRealPath("upload");
+			System.out.println(savePath);
 			service.uploadImg(savePath,file);
 			admin.setImg("/upload/"+file.getOriginalFilename());
 		}
@@ -173,6 +176,18 @@ public class AdminController {
 	}
 	
 	
+	//将return的内容以json格式直接加入相应体
+	@ResponseBody
+	@RequestMapping(value="/imgUpload")
+	public ImgResult upload(@RequestParam("img") MultipartFile file,
+			HttpServletRequest req){
+		String savePath=req.getServletContext().getRealPath("upload");
+		
+		ImgResult imgResult=service.uploadImgs(savePath,file);
+		
+		return imgResult;
+		
+	}
 	
 	
 	
