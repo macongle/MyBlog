@@ -17,4 +17,6 @@ public interface IAdminService {
 
 	ImgResult uploadImgs(String savePath, MultipartFile file);
 
+	Admin selectByPrimaryKey(int i);
+
 }

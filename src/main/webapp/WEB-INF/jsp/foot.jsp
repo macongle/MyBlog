@@ -25,9 +25,8 @@
 				<div class="col-lg-5">
 						<p>
 							<address>
-  									河南省郑州市中牟县<br>
-  									郑州工商学院<br>
-									联系方式: (123) 456-7890
+  									${sessionScope.admin.adress}<br>
+									联系方式: ${sessionScope.admin.phone}
 							</address>
 						</p>
 				</div>
@@ -37,8 +36,8 @@
 				<div class="col-lg-5">
 						<p>
 							<address>
-  							<strong>王大可</strong><br>
-  							<a href="mailto:#">dake_wang@example.com</a>
+  							<strong>${sessionScope.admin.name}</strong><br>
+  							<a href="mailto:#">${sessionScope.admin.email}</a>
 							</address>
 						</p>
 				</div>

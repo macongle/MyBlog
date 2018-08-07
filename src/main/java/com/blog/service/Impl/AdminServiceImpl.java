@@ -94,4 +94,9 @@ public class AdminServiceImpl implements IAdminService{
 		
 	}
 
+	@Override
+	public Admin selectByPrimaryKey(int i) {
+		return dao.selectByPrimaryKey(i);
+	}
+
 }

@@ -24,7 +24,7 @@
 			</form>
 			<ul class="nav menu">
 				<li>
-					<a href="#"><span class="glyphicon glyphicon-dashboard"></span>个人信息</a>
+					<a href="<%=path%>/admin/adminLogin"><span class="glyphicon glyphicon-dashboard"></span>个人信息</a>
 				</li>
 				<li class="parent ">
 					<a href="#">
@@ -32,7 +32,7 @@
 					</a>
 					<ul class="children collapse" id="sub-item-1">
 						<li>
-							<a class="" href="<%=path%>/blog">
+							<a class="" href="<%=path%>/blog?pageNow=1">
 								<span class="glyphicon glyphicon-share-alt"></span> 博客管理
 							</a>
 						</li>
@@ -65,11 +65,11 @@
 		}(window.jQuery);
 
 		$(window).on('resize', function () {
-		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-		})
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show');
+		});
 		$(window).on('resize', function () {
-		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-		})
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide');
+		});
 	</script>	
 </body>
 

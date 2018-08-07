@@ -29,7 +29,7 @@
 			<div class="row">
 				<ol class="breadcrumb">
 					<li>
-						<a href="#"><span class="glyphicon glyphicon-home"></span></a>
+						<a href="<%=path%>/main"><span class="glyphicon glyphicon-home"></span></a>
 					</li>
 					<li class="active">添加博文</li>
 				</ol>

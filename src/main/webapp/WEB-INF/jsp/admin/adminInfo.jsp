@@ -24,7 +24,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li><a href="<%=path%>/main"><span class="glyphicon glyphicon-home"></span></a></li>
 				<li class="active">个人信息</li>
 			</ol>
 		</div>
@@ -100,7 +100,6 @@
 		</div>
 	</div>
 
-	</div>
 	<!--/.main-->
 	<script src="<%=staticPath%>/js/jquery/jquery-3.3.1.min.js"></script>
 	<script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js"></script>

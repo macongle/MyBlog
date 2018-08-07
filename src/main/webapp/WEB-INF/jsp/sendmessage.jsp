@@ -28,20 +28,20 @@
 						<div class="panel panel-orange">
 							<div class="panel-body">
 								
-								<form class="form-horizontal" action="#" method="post">
+								<form class="form-horizontal" action="<%=path%>/main/saveMessage" method="post">
 									<div class="form-group col-lg-5">
 										<label class="control-label">姓名：</label><br />
-										<input type="input" class="form-control" placeholder="您的姓名" required="required" />
+										<input type="text" class="form-control" name="name" placeholder="您的姓名" required="required" />
 									</div>
 									<div class="form-group col-lg-12">
 										<label class="control-label">留言：</label><br />
-										<textarea class="form-control" rows="4" required="required"></textarea>
+										<textarea class="form-control" rows="4" name="content" required="required"></textarea>
 									</div>
 									<div class="form-group col-lg-5">
 										<label class="control-label">若方便，请留下您的联系方式：</label>
-										<input type="email" class="form-control" placeholder="您的邮箱" />
+										<input type="email" class="form-control" name="email" placeholder="您的邮箱" />
 										<br />
-										<input type="input" class="form-control" placeholder="您的联系方式" />
+										<input type="text" class="form-control" name="phone" placeholder="您的联系方式" />
 										
 									</div>
 									<div class="form-group col-lg-12">

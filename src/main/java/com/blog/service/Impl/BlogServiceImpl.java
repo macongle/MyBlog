@@ -20,10 +20,6 @@ public class BlogServiceImpl implements IBlogService{
 	@Autowired
 	private BlogMapper dao;
 	
-	@Override
-	public List<Blog> selectAll() {
-		return dao.selectAll();
-	}
 
 	@Override
 	public ImgResult uploadImgs(String savePath, MultipartFile file) {
@@ -70,6 +66,42 @@ public class BlogServiceImpl implements IBlogService{
 	@Override
 	public int deleteByPrimaryKey(Integer bId) {
 		return dao.deleteByPrimaryKey(bId);
+	}
+
+	@Override
+	public List<Blog> selectBlogByDate() {
+		return dao.selectBlogByDate();
+	}
+
+	@Override
+	public List<Blog> selectBlogByreadCounts(int pageNow, int displayCount) {
+		int m = (pageNow-1)*5;
+		int n = displayCount;
+		return dao.selectBlogByreadCounts(m,n);
+	}
+
+	@Override
+	public List<Blog> selectBlogByreadCount() {
+		return dao.selectBlogByreadCount();
+	}
+
+	@Override
+	public int getCount(int displayCount) {
+		return dao.getCount(displayCount);
+	}
+
+	@Override
+	public List<Blog> selectBlogByDates(int pageNow, int displayCount) {
+		int m = (pageNow-1)*5;
+		int n = displayCount;
+		return dao.selectBlogByDates(m,n);
+	}
+
+	@Override
+	public List<Blog> selectAll(int pageNow, int displayCount) {
+		int m = (pageNow-1)*5;
+		int n = displayCount;
+		return dao.selectAll(m,n);
 	}
 
 }

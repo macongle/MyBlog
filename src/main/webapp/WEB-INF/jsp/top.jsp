@@ -32,13 +32,13 @@
 							<!-- 导航栏 -->
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="#" class="aa">博客首页</a>
+									<a href="<%=path %>/main" class="aa">博客首页</a>
 								</li>
 								<li>
-									<a href="#" class="aa">博客列表</a>
+									<a href="<%=path %>/main/blogList?pageNow=1" class="aa">博客列表</a>
 								</li>
 								<li>
-									<a href="#" class="aa">给我留言</a>
+									<a href="<%=path %>/main/message" class="aa">给我留言</a>
 								</li>
 								<li>
 									<a href="#" class="aa">赞助作者</a>

@@ -2,6 +2,9 @@ package com.blog.model;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Admin implements Serializable{
     /**
 	 * 

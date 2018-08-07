@@ -19,10 +19,11 @@
     content
   </sql>
   
-  <select id="selectAll"  resultMap="BaseResultMap">
+  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from blog
+    limit #{0},#{1}
   </select>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
@@ -33,6 +34,46 @@
     from blog
     where b_id = #{bId,jdbcType=INTEGER}
   </select>
+  
+  <select id="selectBlogByDate"  resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog
+    order by createTime desc
+    
+  </select>
+  
+  <select id="selectBlogByreadCount"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+    order by readCount desc
+    limit 0,5
+  </select>
+  
+  <select id="selectBlogByreadCounts" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+    order by readCount desc
+    limit #{0},#{1}
+  </select>
+  
+   <select id="selectBlogByDates" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+    order by createTime desc
+    limit #{0},#{1}
+  </select>
+  
+  <select id="getCount"  resultType="java.lang.Integer">
+    select count(b_id)
+    from blog
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from blog
     where b_id = #{bId,jdbcType=INTEGER}

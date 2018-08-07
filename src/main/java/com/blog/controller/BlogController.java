@@ -24,6 +24,8 @@ public class BlogController {
 
 	@Autowired
 	private IBlogService service;
+	
+	private int displayCount=5;
 
 	/**
 	 * 查询所有blog信息，但不包括content字段
@@ -31,10 +33,15 @@ public class BlogController {
 	 * @return
 	 */
 	@RequestMapping
-	public String getBlogsInfo(ModelMap map,String msg){
-		List<Blog> blogList = service.selectAll();
+	public String getBlogsInfo(ModelMap map,String msg,HttpServletRequest req){
+		int pageNow=Integer.parseInt(req.getParameter("pageNow"));
+		List<Blog> blogList = service.selectAll(pageNow,displayCount);
+		int maxCount=service.getCount(displayCount);
+		int pageCount=maxCount%displayCount == 0 ? maxCount/displayCount : maxCount/displayCount+1;
 		map.addAttribute("blogList", blogList);
 		map.addAttribute("msg",msg);
+		map.addAttribute("pageNow", pageNow);
+		map.addAttribute("pageCount", pageCount);
 		return "admin/bloginfo";
 	}
 	

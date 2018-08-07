@@ -25,11 +25,10 @@
 						<h4></h4>
 					</div>
 					<div class="row">
-						<img src="<%=staticPath%>/img/man.jpg" class="img-circle col-lg-5 col-lg-offset-3" />
+						<img src="<%=path%>/${sessionScope.admin.img}" class="img-circle col-lg-5 col-lg-offset-3" />
 					</div>
 					<div class="row text-center">
-					<!-- 直接使用${sessionScope.admin.name}查不到结果 -->
-						<b>王大可</b><br/> 
+						<b>${sessionScope.admin.name}</b><br/> 
 						<span class="label label-primary">Java</span>
 						<span class="label label-success">Python</span>
 						<span class="label label-info">大数据</span>

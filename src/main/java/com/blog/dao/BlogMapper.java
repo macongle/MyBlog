@@ -22,7 +22,17 @@ public interface BlogMapper {
 
     int updateByPrimaryKey(Blog record);
 
-	List<Blog> selectAll();
+	List<Blog> selectBlogByDate();
+
+	List<Blog> selectBlogByreadCount();
+
+	List<Blog> selectBlogByreadCounts(int m, int n);
+
+	int getCount(int displayCount);
+
+	List<Blog> selectBlogByDates(int m, int n);
+
+	List<Blog> selectAll(int m, int n);
 
 	
 }

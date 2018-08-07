@@ -1,9 +1,11 @@
+H:\Javaproject\MyBlog\src\main\java\com\blog\controller\MainController.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\dao\BlogMapper.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\service\IAdminService.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\service\IBlogService.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\service\Impl\BlogServiceImpl.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\service\Impl\AdminServiceImpl.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\controller\BlogController.java
+H:\Javaproject\MyBlog\src\main\java\com\blog\model\Message.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\model\Blog.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\dao\AdminMapper.java
 H:\Javaproject\MyBlog\src\main\java\com\blog\controller\AdminController.java

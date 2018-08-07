@@ -9,7 +9,6 @@ import com.blog.model.ImgResult;
 
 public interface IBlogService {
 
-	List<Blog> selectAll();
 
 	ImgResult uploadImgs(String savePath, MultipartFile file);
 
@@ -20,5 +19,17 @@ public interface IBlogService {
 	int editorBlog(Blog blog);
 
 	int deleteByPrimaryKey(Integer bId);
+
+	List<Blog> selectBlogByDate();
+
+	List<Blog> selectBlogByreadCounts(int pageNow, int displayCount);
+
+	List<Blog> selectBlogByreadCount();
+
+	int getCount(int displayCount);
+
+	List<Blog> selectBlogByDates(int pageNow, int displayCount);
+
+	List<Blog> selectAll(int pageNow, int displayCount);
 
 }
