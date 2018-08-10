@@ -30,6 +30,8 @@ public interface IBlogService {
 
 	List<Blog> selectBlogByDates(int pageNow, int displayCount);
 
-	List<Blog> selectAll(int pageNow, int displayCount);
+	List<Blog> selectAlls(int pageNow, int displayCount);
+
+	int updateReadCount(Integer bId);
 
 }

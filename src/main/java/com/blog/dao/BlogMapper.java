@@ -32,7 +32,12 @@ public interface BlogMapper {
 
 	List<Blog> selectBlogByDates(int m, int n);
 
-	List<Blog> selectAll(int m, int n);
+	List<Blog> selectAlls(int m, int n);
+	
+	List<Blog> selectAll();
+
+	int updateReadCount(Integer bId);
+
 
 	
 }

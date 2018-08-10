@@ -19,7 +19,13 @@
     content
   </sql>
   
-  <select id="selectAll" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from blog
+  </select>
+  
+  <select id="selectAlls" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from blog
@@ -73,6 +79,10 @@
     select count(b_id)
     from blog
   </select>
+  
+  <update id="updateReadCount" parameterType="java.lang.Integer">
+  		update blog set readCount = readCount + 1 where b_id = #{bId}
+  </update>
   
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from blog

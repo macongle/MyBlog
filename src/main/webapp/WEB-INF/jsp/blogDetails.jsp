@@ -15,7 +15,7 @@
 <link rel="stylesheet"
 	href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=staticPath%>/css/bootstrap/mystyle.css" />
-<title>index</title>
+<title>Details</title>
 </head>
 
 <body>
@@ -27,13 +27,12 @@
 			<!-- 博客列表 -->
 			<div class="col-lg-8">
 
-				<c:forEach items="${requestScope.blogListByDate}" var="blog">
 					<div class="row">
 						<div class="panel panel-orange">
 							<div class="panel-heading">
 								<div class="text-center">
 									<h3 class="color-gray">
-										<a href="<%=path %>/main/BlogDetails/${blog.bId}" class="blogTitle">${blog.title}</a>
+										<a href="#" class="blogTitle">${blog.title}</a>
 									</h3>
 									<h5>
 										<span class="glyphicon glyphicon-user color-orange"></span><span>${blog.author}</span>
@@ -56,7 +55,6 @@
 							</div>
 						</div>
 					</div>
-				</c:forEach>
 
 			</div>
 			<!-- 组件复用 -->

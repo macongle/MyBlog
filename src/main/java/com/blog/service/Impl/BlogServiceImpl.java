@@ -98,10 +98,16 @@ public class BlogServiceImpl implements IBlogService{
 	}
 
 	@Override
-	public List<Blog> selectAll(int pageNow, int displayCount) {
+	public List<Blog> selectAlls(int pageNow, int displayCount) {
 		int m = (pageNow-1)*5;
 		int n = displayCount;
-		return dao.selectAll(m,n);
+		return dao.selectAlls(m,n);
+	}
+
+	@Override
+	public int updateReadCount(Integer bId) {
+		return dao.updateReadCount(bId);
+		
 	}
 
 }

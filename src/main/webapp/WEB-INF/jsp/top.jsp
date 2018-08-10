@@ -41,7 +41,7 @@
 									<a href="<%=path %>/main/message" class="aa">给我留言</a>
 								</li>
 								<li>
-									<a href="#" class="aa">赞助作者</a>
+									<a href="<%=path %>/main/zz" class="aa">赞助作者</a>
 								</li>
 							</ul>
 							<!-- 搜索框 -->

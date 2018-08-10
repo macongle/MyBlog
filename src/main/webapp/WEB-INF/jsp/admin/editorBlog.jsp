@@ -46,7 +46,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">编辑博文</div>
 						<div class="panel-body">
-						<form action="<%=path%>/blog/editBlog" method="post" role="form">
+						<form action="<%=path%>/blog/editBlog?pageNow=1" method="post" role="form">
 						<input type="hidden" class="form-control"
 										name="bId" value="${requestScope.blog.bId}">
 							<div class="form-group">

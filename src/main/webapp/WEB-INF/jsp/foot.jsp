@@ -37,7 +37,7 @@
 						<p>
 							<address>
   							<strong>${sessionScope.admin.name}</strong><br>
-  							<a href="mailto:#">${sessionScope.admin.email}</a>
+  							<a href="#">${sessionScope.admin.email}</a>
 							</address>
 						</p>
 				</div>

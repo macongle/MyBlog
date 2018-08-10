@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.VisitorMapper">
+  <resultMap id="BaseResultMap" type="com.blog.model.Visitor">
+    <id column="v_id" jdbcType="INTEGER" property="vId" />
+    <result column="ipAddress" jdbcType="VARCHAR" property="ipaddress" />
+    <result column="b_id" jdbcType="INTEGER" property="bId" />
+    <result column="visitTime" jdbcType="DATE" property="visittime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    v_id, ipAddress, b_id, visitTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from visitor
+    where v_id = #{vId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectVisitorBySelective" parameterType="com.blog.model.Visitor" resultMap="BaseResultMap">
+  	select 
+  	<include refid="Base_Column_List" />
+    from visitor
+    where ipAddress = #{ipaddress}
+    and b_id = #{bId}
+    and visitTime = #{visittime}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from visitor
+    where v_id = #{vId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.blog.model.Visitor">
+    insert into visitor (v_id, ipAddress, b_id, 
+      visitTime)
+    values (#{vId,jdbcType=INTEGER}, #{ipaddress,jdbcType=VARCHAR}, #{bId,jdbcType=INTEGER}, 
+      #{visittime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.blog.model.Visitor">
+    insert into visitor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="vId != null">
+        v_id,
+      </if>
+      <if test="ipaddress != null">
+        ipAddress,
+      </if>
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="visittime != null">
+        visitTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="vId != null">
+        #{vId,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddress != null">
+        #{ipaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        #{bId,jdbcType=INTEGER},
+      </if>
+      <if test="visittime != null">
+        #{visittime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.blog.model.Visitor">
+    update visitor
+    <set>
+      <if test="ipaddress != null">
+        ipAddress = #{ipaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        b_id = #{bId,jdbcType=INTEGER},
+      </if>
+      <if test="visittime != null">
+        visitTime = #{visittime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where v_id = #{vId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.blog.model.Visitor">
+    update visitor
+    set ipAddress = #{ipaddress,jdbcType=VARCHAR},
+      b_id = #{bId,jdbcType=INTEGER},
+      visitTime = #{visittime,jdbcType=DATE}
+    where v_id = #{vId,jdbcType=INTEGER}
+  </update>
+</mapper>

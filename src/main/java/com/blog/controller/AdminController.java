@@ -189,6 +189,13 @@ public class AdminController {
 		
 	}
 	
+	@RequestMapping(value="/adminLogin")
+	public String adminLogin(){
+		
+		return "admin/adminInfo";
+		
+	}
+	
 	
 	
 	

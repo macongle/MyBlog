@@ -46,7 +46,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">博文信息</div>
 						<div class="panel-body">
-						<form action="<%=path%>/blog" method="post" role="form">
+						<form action="<%=path%>/blog/addblog?pageNow=1" method="post" role="form">
 							<div class="form-group">
 									<label>标题</label> <input type="text" class="form-control"
 										name="title">
